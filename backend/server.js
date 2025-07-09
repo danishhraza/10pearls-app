@@ -14,6 +14,8 @@ app.use(express.json());
 
 app.use('/api/auth', require('./routes/authRoutes'));
 
+app.use('/api/notes', require('./routes/noteRoutes'));
+
 app.use((err, req, res, next) => {
   logger.error(err.message);
   res.status(500).json({ message: 'Server error' });
